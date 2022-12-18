@@ -17,32 +17,38 @@ public class Menu_Main_Screen {
 		System.out.println("8.	Go back to Welcome Page.");
 		System.out.println("9.	Close the application.");
 
-		try (Scanner sc = new Scanner(System.in)) {
+		try {
+			Scanner sc = new Scanner(System.in); 
 			System.out.print("Please enter the number provided for the function you want to perform: ");
 			int option = sc.nextInt();
 
 			switch (option) {
 			case 1: {
+				System.out.println("\n\n\n");
 				Get_FileNames listEntries = new Get_FileNames();
 				listEntries.getList();
 				break;
 			}
 			case 2: {
+				System.out.println("\n\n\n");
 				Add_New_File addFile = new Add_New_File();
 				addFile.newFile();
 				break;
 			}
 			case 3: {
+				System.out.println("\n\n\n");
 				Remove_File removeFile = new Remove_File();
 				removeFile.deleteFile();
 				break;
 			}
 			case 4: {
+				System.out.println("\n\n\n");
 				Search_File searchFile = new Search_File();
 				searchFile.searchFile();
 				break;
 			}
 			case 8: {
+				System.out.println("\n\n\n");
 				WelcomeScreen.displayWelcome();
 				break;
 			}
@@ -50,10 +56,13 @@ public class Menu_Main_Screen {
 				System.exit(1);
 			}
 			default:
+				System.out.println("\n\n");
 				System.out.println("Invalid input. Please select a number related to given options.\n\n");
 				chooseOption();
 			}
+			sc.close();
 		} catch (InputMismatchException e) {
+			System.out.println("\n\n");
 			System.out.println("Invalid input. Please select a number related to given options.\n\n");
 			chooseOption();
 		}
