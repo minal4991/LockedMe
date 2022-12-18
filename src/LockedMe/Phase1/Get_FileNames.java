@@ -25,10 +25,10 @@ public class Get_FileNames {
 			if (userPath.isDirectory()) {
 				File[] filesList = userPath.listFiles();
 				Arrays.sort(filesList);
-				
+
 				List<String> fileList = new ArrayList<String>();
 				List<String> directoryList = new ArrayList<String>();
-				
+
 				for (int i = 0; i < filesList.length; i++) {
 					if (filesList[i].isFile()) {
 						fileList.add(filesList[i].getName());
@@ -36,28 +36,26 @@ public class Get_FileNames {
 						directoryList.add(filesList[i].getName());
 					}
 				}
-				
+
 				System.out.println("\n\n==============================================");
 				System.out.println("Files in the directory " + enteredPath);
 				System.out.println("==============================================");
-				if(fileList.size()>=0) {
-					for(int i = 0; i < fileList.size(); i++) {
-					System.out.println(fileList.get(i));
-				}
-				}
-				else {
+				if (fileList.size() >= 0) {
+					for (int i = 0; i < fileList.size(); i++) {
+						System.out.println(fileList.get(i));
+					}
+				} else {
 					System.out.println("NO FILES in the directory.");
 				}
-				
+
 				System.out.println("\n\n==============================================");
 				System.out.println("Directories in the directory " + enteredPath);
 				System.out.println("==============================================");
-				if(directoryList.size()>0) {
-				for(int i = 0; i < directoryList.size(); i++) {
-					System.out.println(directoryList.get(i));
-				}
-				}
-				else {
+				if (directoryList.size() > 0) {
+					for (int i = 0; i < directoryList.size(); i++) {
+						System.out.println(directoryList.get(i));
+					}
+				} else {
 					System.out.println("NO DIRECTORIES in the directory.");
 				}
 			} else {

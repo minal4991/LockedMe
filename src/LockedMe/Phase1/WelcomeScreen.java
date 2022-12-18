@@ -1,13 +1,13 @@
 package LockedMe.Phase1;
 
 import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class WelcomeScreen {
+public class WelcomeScreen 
+{
 
-	public static void displayWelcome() throws IOException {
-		
+	public static void displayWelcome() throws IOException 
+	{
 		String appHeader = String.format("*****************************************************\n"
 				+ "** Welcome to LockedMe.com. \n" + "** This application was developed by Minaldeep Cheema.\n"
 				+ "*****************************************************\n");
@@ -25,29 +25,35 @@ public class WelcomeScreen {
 
 		System.out.println(welcomeMenu);
 
-		try {
+		try 
+		{
 			Scanner sc = new Scanner(System.in);
 			System.out.print("Please enter the number provided for the function you want to perform: ");
 			int option = sc.nextInt();
 
-			switch (option) {
-			case 1: {
-				System.out.println("\n\n\n");
-				Menu_Main_Screen.chooseOption();
-				break;
-			}
-			case 2: {
-				System.exit(1);
-				break;
-			}
-			default:
-				System.out.println("\n\n");
-				System.out.println("Invalid input. Please select a number related to given options.\n\n");
-				displayWelcome();
+			switch (option) 
+			{
+				case 1: 
+				{
+					System.out.println("\n\n\n");
+					Menu_Main_Screen.chooseOption();
+					break;
+				}
+				case 2: 
+				{
+					System.out.println("\n\nProgram is Terminated.");
+					System.exit(1);
+					break;
+				}
+				default:
+					System.out.println("\n\n");
+					System.out.println("Invalid input. Please select a number related to given options.\n\n");
+					displayWelcome();
 			}
 			sc.close();
 		} 
-		catch (Exception e) {
+		catch (Exception e) 
+		{
 			System.out.println("\n\n");
 			System.out.println("Invalid input. Please select a number related to given options.\n\n");
 			displayWelcome();
